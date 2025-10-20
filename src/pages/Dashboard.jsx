@@ -39,11 +39,11 @@ const Dashboard = () => {
     // Here you would typically upload the file to your server
     // For now, we'll just create a new resume entry
     const newResume = {
-      _id: 'res' + Date.now(), // Generate a temporary ID
+      _id: "res" + Date.now(), // Generate a temporary ID
       title: title,
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
     };
-    setAllResumes(prev => [...prev, newResume]);
+    setAllResumes((prev) => [...prev, newResume]);
     setShowUploadResume(false);
     setTitle("");
     setResume(null);
@@ -62,14 +62,14 @@ const Dashboard = () => {
     setTitle("");
   };
 
-  const deleteResume = async (resumeId) => {
-    const confirm = window.confirm(
-      "Are you sure, you want to delete this resume?"
-    );
-    if (confirm) {
-      setAllResumes((prev) => prev.filter((resume) => resume._id !== resumeId));
-    }
-  };
+  // const deleteResume = async (resumeId) => {
+  //   const confirm = window.confirm(
+  //     "Are you sure, you want to delete this resume?"
+  //   );
+  //   if (confirm) {
+  //     setAllResumes((prev) => prev.filter((resume) => resume._id !== resumeId));
+  //   }
+  // };
 
   useEffect(() => {
     loadAllResumes();
@@ -163,10 +163,11 @@ const Dashboard = () => {
                   onClick={(e) => e.stopPropagation()}
                   className="hidden absolute top-1 right-1 group-hover:flex items-center "
                 >
+                  {/* 
                   <TrashIcon
                     onClick={() => deleteResume(resume._id)}
                     className="size-7 p-1.5 hover:bg-white/50 rounded text-slate-700 transition-colors"
-                  />
+                  /> */}
                   <PencilIcon
                     onClick={() => {
                       setEditResumeId(resume._id);
@@ -235,7 +236,7 @@ const Dashboard = () => {
                   >
                     Select Resume File
                   </label>
-                  <label 
+                  <label
                     htmlFor="resume-input"
                     className="flex flex-col items-center justify-center gap-2 border border-dashed border-slate-400/60 rounded-xl p-6 my-3 hover:border-purple-500 hover:text-purple-700 transition cursor-pointer"
                   >
