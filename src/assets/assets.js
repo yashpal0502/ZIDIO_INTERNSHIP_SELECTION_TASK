@@ -1,9 +1,7 @@
 import dummy_profile from "./dummy_profile.png";
-import logo from "./logo.png";
 import image from "./image.png";
 
 export const assets = {
-  logo,
   image,
 };
 
